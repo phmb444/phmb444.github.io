@@ -4,7 +4,7 @@ const port = 3000;
 
 app.use(express.static('public'));
 
-app.get('/', (req, res) => {
+app.get('', (req, res) => {
   res.sendFile(__dirname + '/index.html'); // Substitua 'index.html' pelo nome do seu arquivo HTML, se for diferente.
 });
 
