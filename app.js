@@ -11,3 +11,7 @@ app.get('/', (req, res) => {
 app.listen(port, () => {
   console.log(`Servidor está executando em http://localhost:${port}`);
 });
+
+app.get('/logado', (req, res) => {
+    res.sendFile(__dirname + "/logado.html")
+})
