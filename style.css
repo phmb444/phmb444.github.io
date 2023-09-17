@@ -1,0 +1,316 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+body{
+    margin: 0;
+    padding: 0;
+    background-color: rgb(255, 250, 243);
+}
+*{
+    transition: all 0.3s ease;
+    font-family: 'Roboto', sans-serif;
+}
+.semaninha{
+    height: 30px;
+}
+.insta{
+    height: 30px;
+}
+.github{
+    height: 30px;
+}
+.linkend{
+    height: 30px;
+}
+header{
+        display: flex;
+        height: 10vh;
+        width: 100%;
+        align-items: center;
+        padding: 20px;
+        box-sizing: border-box;
+        justify-content: space-between;
+        box-shadow: 1px 10px 5px  #60565676 
+}
+.social img:hover{
+    transform: translateY(-5px);
+}
+.social img{
+    margin-right: 5px;
+}
+main{
+    background-image: url(erik-mclean-QzpgqElvSiA-unsplash\ \(1\).jpg);
+    width: 90vw;
+    max-height: 55vh;
+    min-height: 30vh;
+    height: fit-content;
+    background-size: cover;
+    margin: 0 auto;
+    margin-top: 2vh;
+    border-radius: 20px;
+    padding: 5px 20px;
+    padding-right: 50px;
+    box-sizing: border-box;
+    color: white;
+    padding-bottom: 20px;
+}
+h1{
+    font-size: 1.7em
+}
+h2{
+    font-size: 0.8em;
+}
+main button{
+    margin-top: 10%;
+    border: none;
+    background-color: #00FF57;
+    width: 160px;
+    height: 50px;
+    border-radius: 50px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+main button:hover{
+    width: 200px;
+    
+}
+.spotify{
+    height: 35px;
+}
+.Aplicativo{
+    width: 85vw;
+    margin: 0 auto;
+}
+.Aplicativo h3{
+    font-weight: 700;
+    font-size: 30px; 
+    text-shadow: 5px 5px 5px #abababaa ;
+}
+.tecnologias{
+    height: 30vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(-7vh);
+}
+.tecnologias h4{
+    font-size: 25px;
+    
+}
+.tec img{
+    height: 50px;
+}
+.boxtec{
+    display: flex;
+    justify-content: space-around; 
+    width: 90%;
+}
+.tec{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    font-weight: 700;
+}
+@media only screen and (min-width: 500px) {
+    .semaninha{
+        height: 50px;
+    }
+    .insta{
+        height: 50px;
+    }
+    .github{
+        height: 50px;
+    }
+    .linkend{
+        height: 50px;
+    }
+    header{
+        height: 100px;
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: space-between;
+        box-shadow: 1px 10px 5px  #60565676;
+        box-sizing: border-box;
+        padding: 50px;
+    }
+    .social img:hover{
+        transform: translateY(-5px);
+    }
+    .social img{
+        margin-right: 15px;
+    }
+    main{
+        background-image: url(erik-mclean-QzpgqElvSiA-unsplash\ \(1\).jpg);
+        width: 90vw;
+        max-height: 120vh;
+        background-size: cover;
+        margin: 0 auto;
+        margin-top: 2vh;
+        border-radius: 20px;
+        padding: 5px 20px;
+        padding-right: 30%;
+        box-sizing: border-box;
+        color: white;
+        padding-bottom: 20px;
+    }
+    h1{
+        font-size: 3em;
+    }
+    h2{
+        font-size: 1.3em; 
+        width: 80vw;
+    }
+    main button{
+        margin-top: 7%;
+        border: none;
+        background-color: #00FF57;
+        width: 250px;
+        height: 70px;
+        border-radius: 50px;
+        font-weight: 700;
+        font-size: 1.1em;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+    main button:hover{
+        width: 350px;
+        
+    }
+    .spotify{
+        height: 50px;
+    }
+    .Aplicativo{
+        width: 89vw;
+        margin: 0 auto;
+    }
+    .Aplicativo h3{
+        font-weight: 700;
+        font-size: 3em; 
+        text-shadow: 5px 5px 5px #abababaa ;
+    }
+    .tecnologias{
+        height: 30vh;
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-shadow: 5px 5px 5px #abababaa ;
+    }
+    .tecnologias h4{
+        font-size: 3em;
+        
+    }
+    .tec img{
+        height: 90px;
+    }
+    .boxtec{
+        display: flex;
+        justify-content: space-around; 
+        width: 60%;
+    }
+    .tec{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-weight: 700;
+    }
+    
+  }
+
+  @media only screen and (min-width: 1200px) {
+    main{
+        height: 80vh;
+        padding-right: 50%;
+        padding-left: 4%;
+    }
+    h1{
+        font-size: 3.5em;
+    }
+    h2{
+        font-size: 1.5em; 
+        width: 500px;
+    }
+    .lado_a_lado{
+        display: flex;
+        align-items: center;
+        justify-content:center;
+        width: 100%;
+        height: 40vh;
+        margin-top: 4vh;
+    }
+    .Aplicativo{
+        width: 40vw;
+        margin: 0;
+        transform: translateY(-20px);
+        
+    }
+    .Aplicativo h3 {
+        font-size: 3.5em;
+    }
+    .tecnologias{
+        height: 30vh;
+        width: 50vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-shadow: 5px 5px 5px #abababaa ;
+        
+    }
+}
+@media (min-width: 700px) and (max-width: 1200px) { 
+    h1{
+        font-size: 3.5em;
+    }
+    h2{
+        font-size: 1.5em; 
+        width: 700px;
+    }
+    .Aplicativo{
+        width: 89vw;
+        margin: 0 auto;
+    }
+    .Aplicativo h3{
+        font-weight: 700;
+        font-size: 3.2em; 
+        text-shadow: 5px 5px 5px #abababaa ;
+    }
+    .tecnologias{
+        height: 30vh;
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-shadow: 5px 5px 5px #abababaa ;
+    }
+    .tecnologias h4{
+        font-size: 3em;
+        
+    }
+    .tec img{
+        height: 90px;
+    }
+    .boxtec{
+        display: flex;
+        justify-content: space-around; 
+        width: 60%;
+    }
+    .tec{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-weight: 700;
+    }
+}
+  
