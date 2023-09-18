@@ -116,7 +116,81 @@ main button:hover{
     width: 100px;
     font-weight: 700;
 }
+.main2{
+    height: 75vh;
+    width: 90vw;
+    margin: 0 auto;
+    box-shadow: 2px 3px 20px rgba(128, 128, 128, 0.649);
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 20% 20% 20% 20% 20% 20%;
+    box-sizing: border-box;
+    padding: 20px;
+    grid-column-gap: 10px;
+    font-weight: 700;
+}
+.menus{
+    width: 90vw;
+    margin: 0 auto;
+    height: 5vh;
+    margin-top: 3vh;
+    display: flex;
+}
+.menu{
+    min-width: 70px;
+    height: 5vh;
+    background-color: rgb(186, 186, 186);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 20px;
+    font-size: 10px;
+    padding: 8px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 700;
+}
+.menu img{
+    height: 20px;
+    margin-left: 8px;
+}
+.items{
+   display: flex;
+   align-items: center;
+   font-size: 12px;
+}
+.items img{
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+
 @media only screen and (min-width: 500px) {
+    .items{
+        font-size: 1.2em;
+        font-weight: 700;
+    }
+    .items img{
+        width: 80px;
+        height: 80px;
+    }
+    .main2{
+        width: 75vw;
+        padding: 20px 40px;
+        overflow: scroll;
+        grid-gap: 3vw;
+        min-width: 490px;
+        max-width: 75vw;
+        grid-template-rows: 18%;
+        grid-row-gap: 5px;
+        overflow-x: hidden;
+        grid-column-gap: 10px;
+    }
+    .menus{
+        min-width: 490px;
+        max-width: 75vw;
+    }
     .semaninha{
         height: 50px;
     }
@@ -227,6 +301,9 @@ main button:hover{
   }
 
   @media only screen and (min-width: 1200px) {
+    .items{
+        font-size: 1.4em;
+    }
     main{
         height: 80vh;
         padding-right: 50%;
@@ -268,6 +345,9 @@ main button:hover{
     }
 }
 @media (min-width: 700px) and (max-width: 1200px) { 
+    .items{
+        font-size: 1.3em;
+    }
     h1{
         font-size: 3.5em;
     }
@@ -313,4 +393,19 @@ main button:hover{
         font-weight: 700;
     }
 }
-  
+@media only screen and (max-width: 318px){
+    .items{
+        font-size: 10px;
+    }
+    .items img{
+        width: 40px;
+        height: 40px;
+    }
+    .menu{
+        font-size: 10px;
+    }
+    .menu img{
+        height: 15px;
+        margin-left: 4px;
+    }
+}
