@@ -14,10 +14,12 @@ function requestAuthorization() {
   const state = generateRandomState();
   const authUrl = `${authorization_url}?client_id=${client_id}&response_type=code&redirect_uri=${redirect_uri}&scope=${scope}&state=${state}`;
   window.location.href = authUrl;
+  console.log("foi para autorizacao")
 }
 
 function getAuthorizationCode() {
   const params = new URLSearchParams(window.location.search);
+  console.log("pegou autorizacao")
   return params.get("code");
 }
 
@@ -45,6 +47,7 @@ function exchangeCodeForToken(code) {
     .catch((error) => {
       console.error("Erro ao trocar código por token:", error);
     });
+    console.log("trocou código pelo token")
 }
 
 // Passo 4: Obter os 10 artistas mais ouvidos pelo usuário
@@ -64,7 +67,7 @@ function getTopArtists(access_token) {
     .catch((error) => {
       console.error("Erro ao obter os artistas mais ouvidos:", error);
     });
-
+    console.log("pegou top artistas")
 }
 
 function getTopTracks(access_token) {
@@ -83,18 +86,23 @@ function getTopTracks(access_token) {
       .catch((error) => {
         console.error("Erro ao obter as faixas mais ouvidos:", error);
       });
-  
+      console.log("pegou top faixas")
   }
 
 // Função auxiliar para gerar um estado aleatório
 function generateRandomState() {
+  console.log("gerou estado aleatorio")
   return Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
 }
 
-// Verificar se há um código de autorização no URL de redirecionamento e trocá-lo por um token de acesso
-const authorizationCode = getAuthorizationCode();
-if (authorizationCode) {
-  exchangeCodeForToken(authorizationCode);
+function paginaCarregada(){
+  let authorizationCode = getAuthorizationCode();
+  if (authorizationCode) {
+    exchangeCodeForToken(authorizationCode);
+    console.log("verificou se a código de autorizacao")
+}
+  else{requestAuthorization();}
+
 }
 
 let criarArtistas2 =(data)=>{
