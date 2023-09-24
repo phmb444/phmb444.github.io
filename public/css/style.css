@@ -135,6 +135,7 @@ main button:hover{
     height: 5vh;
     margin-top: 3vh;
     display: flex;
+    align-items: end;
 }
 .menu{
     min-width: 70px;
