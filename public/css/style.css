@@ -149,6 +149,7 @@ main button:hover{
     align-items: center;
     justify-content: space-between;
     font-weight: 700;
+    overflow: scroll;
 }
 .menu img{
     height: 20px;
