@@ -1,6 +1,10 @@
+
+
 let y = 0
 let listaFaixas;
-let access_token
+let listaArtistas;
+let access_token;
+let faixasRecomendadas;
 const client_id = "c3d8138bf17f42ff98b1acedab790802";
 const client_secret = "e536212b3c194076848ede08b8c03d5e";
 const redirect_uri = "http://localhost:3000/logado"; 
@@ -8,6 +12,7 @@ const authorization_url = "https://accounts.spotify.com/authorize";
 const token_url = "https://accounts.spotify.com/api/token";
 const top_artists_url = "https://api.spotify.com/v1/me/top/artists?time_range=short_term&limit=10";
 const top_tracks_url = "https://api.spotify.com/v1/me/top/tracks?time_range=short_term&limit=10";
+const recomendations_url = "https://api.spotify.com/v1/recommendations?limit=10&market=BR"  
 
 function requestAuthorization() {
   const scope = "user-top-read";
@@ -89,6 +94,23 @@ function getTopTracks(access_token) {
       console.log("pegou top faixas")
   }
 
+  function getRecomendations(access_token) { 
+    fetch( `https://api.spotify.com/v1/recommendations?limit=50&market=BR&seed_artists=${listaArtistas[0]},${listaArtistas[1]},${listaArtistas[3]},${listaArtistas[4]},${listaArtistas[5]}`, {
+      headers: {
+        Authorization: `Bearer ${access_token}`,
+      },
+    })
+    .then((response) => response.json())
+    .then((data) => {
+      console.log("50 faixa recomendadas:", data.tracks);
+      criarRecomendacoes2(data);
+    })
+    .catch((error) => {
+      console.error("Erro ao obter recomendações", error);
+    });
+  }
+      
+
 // Função auxiliar para gerar um estado aleatório
 function generateRandomState() {
   console.log("gerou estado aleatorio")
@@ -120,12 +142,15 @@ let criarArtistas2 =(data)=>{
     botaoRecomendacoes.style.height = "5vh"
     botaoRecomendacoes.style.backgroundColor = "rgb(186, 186, 186)"
 
+    listaArtistas = []
     y = 0
     let box = document.getElementById("box")
     box.innerHTML = ""
     console.log("items criados");
     console.log(box)
+    console.log(listaFaixas);
     return (box.innerHTML = data.items.map((x)=>{
+        listaArtistas[y] = x.id;
         y++;
         return`
         <div class="items">
@@ -169,11 +194,45 @@ let criarFaixas2 =(data)=>{
     }).join("")
     )
 }
-
 let selecionarArtistas = () =>{
     getTopArtists(access_token);
 }
 let selecionarFaixas = () =>{
     getTopTracks(access_token);
 }
+let selecionarRecomendacoes = () =>{
+  getRecomendations(access_token);
+}
 
+let criarRecomendacoes2 =(data)=>{
+  let botaoFaixas = document.getElementById("botaoFaixas")
+  let botaoArtistas = document.getElementById("botaoArtistas")
+  let botaoRecomendacoes = document.getElementById("botaoRecomendacoes")
+  let menus = document.getElementById("menus")
+
+  menus.style.height = "6h"
+  botaoRecomendacoes.style.height = "6vh"
+  botaoRecomendacoes.style.backgroundColor = "rgb(150, 150, 150)"
+  botaoArtistas.style.height = "5vh"
+  botaoArtistas.style.backgroundColor = "rgb(186, 186, 186)"
+  botaoFaixas.style.height = "5vh"
+  botaoFaixas.style.backgroundColor = "rgb(186, 186, 186)"
+  
+  faixasRecomendadas = []
+  y = 0
+  let box = document.getElementById("box")
+  box.innerHTML = ""
+  console.log("items criados");
+  console.log(box)
+  console.log(access_token);
+  console.log(faixasRecomendadas);
+  return (box.innerHTML = data.tracks.map((x)=>{
+      faixasRecomendadas[y] = x.id;
+      y++;
+      return`
+      <div class="items">
+      <img src="${x.album.images[0].url}" alt="">
+      <p>${y}. ${x.name}</p>
+      </div>`
+  }).join("")
+  )}

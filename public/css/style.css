@@ -38,7 +38,6 @@ header{
     margin-right: 5px;
 }
 main{
-    background-image: url(/imagens/erik-mclean-QzpgqElvSiA-unsplash\ \(1\).jpg);
     width: 90vw;
     max-height: 55vh;
     min-height: 30vh;
@@ -219,6 +218,20 @@ main button:hover{
     }
     .social img{
         margin-right: 15px;
+    }
+    .social{
+        display: flex;
+        align-items: center;
+    }
+    .social div{
+        margin-right: 15px ;
+        color: red;
+        font-weight: 700;
+    }
+    .social div:hover{
+        color: rgb(176, 0, 0);
+        scale: 1.05;
+        cursor: pointer;
     }
     main{
         background-image: url(/imagens/erik-mclean-QzpgqElvSiA-unsplash\ \(1\).jpg);
