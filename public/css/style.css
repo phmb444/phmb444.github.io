@@ -127,6 +127,7 @@ main button:hover{
     padding: 20px;
     grid-column-gap: 10px;
     font-weight: 700;
+     overflow: scroll;
 }
 .menus{
     width: 90vw;
