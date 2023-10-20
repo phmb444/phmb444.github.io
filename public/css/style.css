@@ -132,7 +132,7 @@ main button:hover{
 .menus{
     width: 90vw;
     margin: 0 auto;
-    height: 5vh;
+    height: 6vh;
     margin-top: 3vh;
     display: flex;
     align-items: end;
@@ -140,7 +140,7 @@ main button:hover{
 }
 .menu{
     min-width: 70px;
-    height: 5vh;
+    height: 6vh;
     background-color: rgb(186, 186, 186);
     border-top-left-radius: 10px;
     border-top-right-radius: 20px;
