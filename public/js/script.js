@@ -95,7 +95,7 @@ function getTopTracks(access_token) {
   }
 
   function getRecomendations(access_token) { 
-    fetch( `https://api.spotify.com/v1/recommendations?limit=50&market=BR&seed_artists=${listaArtistas[0]},${listaArtistas[1]},${listaArtistas[3]},${listaArtistas[4]},${listaArtistas[5]}`, {
+    fetch( `https://api.spotify.com/v1/recommendations?limit=10&market=BR&seed_artists=${listaArtistas[0]},${listaArtistas[1]},${listaArtistas[3]},${listaArtistas[4]},${listaArtistas[5]}`, {
       headers: {
         Authorization: `Bearer ${access_token}`,
       },
